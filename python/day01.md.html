@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>README.md</title>
+    <style>body { font-family: sans-serif; padding: 0; margin: 0; }
+.markdown-preview-plus-view:not([data-use-github-style]) {
+  padding: 2em;
+  font-size: 1.2em;
+  color: #F8F8F2;
+  background-color: #282828;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) > :first-child {
+  margin-top: 0;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) h1,
+.markdown-preview-plus-view:not([data-use-github-style]) h2,
+.markdown-preview-plus-view:not([data-use-github-style]) h3,
+.markdown-preview-plus-view:not([data-use-github-style]) h4,
+.markdown-preview-plus-view:not([data-use-github-style]) h5,
+.markdown-preview-plus-view:not([data-use-github-style]) h6 {
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) h1 {
+  font-size: 2.4em;
+  font-weight: 300;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) h2 {
+  font-size: 1.8em;
+  font-weight: 400;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) h3 {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) h5 {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) h6 {
+  font-size: 1em;
+  font-weight: 600;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) strong {
+  color: #ffffff;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) del {
+  color: #dbdbbd;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) a,
+.markdown-preview-plus-view:not([data-use-github-style]) a code {
+  color: #F8F8F0;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) img {
+  max-width: 100%;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) > p {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) > ul,
+.markdown-preview-plus-view:not([data-use-github-style]) > ol {
+  margin-bottom: 1.5em;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) blockquote {
+  margin: 1.5em 0;
+  font-size: inherit;
+  color: #dbdbbd;
+  border-color: #515151;
+  border-width: 4px;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) hr {
+  margin: 3em 0;
+  border-top: 2px dashed #515151;
+  background: none;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) table {
+  margin: 1.5em 0;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) th {
+  color: #ffffff;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) th,
+.markdown-preview-plus-view:not([data-use-github-style]) td {
+  padding: 0.66em 1em;
+  border: 1px solid #515151;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) pre,
+.markdown-preview-plus-view:not([data-use-github-style]) code {
+  color: #ffffff;
+  background-color: #3c3c3c;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) pre,
+.markdown-preview-plus-view:not([data-use-github-style]) pre.editor-colors {
+  margin: 1.5em 0;
+  padding: 1em;
+  font-size: 0.92em;
+  border-radius: 3px;
+  background-color: #323232;
+}
+.markdown-preview-plus-view:not([data-use-github-style]) kbd {
+  color: #ffffff;
+  border: 1px solid #515151;
+  border-bottom: 2px solid #424242;
+  background-color: #3c3c3c;
+}
+
+@include 'style-variables';
+.markdown-preview-plus-view {
+  display: block;
+  overflow-x: hidden;
+}
+.markdown-preview-plus-view .emoji {
+  max-width: 1em !important;
+}
+.markdown-preview-plus-view del {
+  text-decoration: none;
+  position: relative;
+}
+.markdown-preview-plus-view del::after {
+  border-bottom: 1px solid black;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+.markdown-preview-plus-view .flash {
+  -webkit-animation: flash 1s ease-out;
+  -webkit-animation-iteration-count: 1;
+  outline: 1px solid rgba(255, 0, 0, 0);
+}
+@-webkit-keyframes flash {
+  0% {
+    outline-color: rgba(255, 0, 0, 0);
+  }
+  50% {
+    outline-color: #ff0000;
+  }
+  100% {
+    outline-color: rgba(255, 0, 0, 0);
+  }
+}
+.markdown-preview-plus-view pre.editor-colors {
+  flex-direction: column;
+  overflow: auto;
+}
+/* @media print {
+  .markdown-preview-plus-view pre.editor-colors {
+    overflow: visible !important;
+  }
+  .markdown-preview-plus-view pre.editor-colors .line {
+    white-space: pre-wrap !important;
+  }
+} */
+.markdown-preview-plus-view ul.contains-task-list li.task-list-item {
+  position: relative;
+  list-style-type: none;
+}
+.markdown-preview-plus-view ul.contains-task-list li.task-list-item input.task-list-item-checkbox {
+  position: absolute;
+  transform: translateX(-100%);
+  width: 30px;
+}
+
+body.markdown-preview-plus-view[data-use-github-style] {
+  overflow: initial !important;
+}
+.markdown-preview-plus-view[data-use-github-style] {
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  line-height: 1.6;
+  word-wrap: break-word;
+  padding: 30px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+.markdown-preview-plus-view[data-use-github-style] > *:first-child {
+  margin-top: 0 !important;
+}
+.markdown-preview-plus-view[data-use-github-style] > *:last-child {
+  margin-bottom: 0 !important;
+}
+.markdown-preview-plus-view[data-use-github-style] a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+.markdown-preview-plus-view[data-use-github-style] .absent {
+  color: #c00;
+}
+.markdown-preview-plus-view[data-use-github-style] .anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+.markdown-preview-plus-view[data-use-github-style] .anchor:focus {
+  outline: none;
+}
+.markdown-preview-plus-view[data-use-github-style] h1,
+.markdown-preview-plus-view[data-use-github-style] h2,
+.markdown-preview-plus-view[data-use-github-style] h3,
+.markdown-preview-plus-view[data-use-github-style] h4,
+.markdown-preview-plus-view[data-use-github-style] h5,
+.markdown-preview-plus-view[data-use-github-style] h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.markdown-preview-plus-view[data-use-github-style] h1 .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h2 .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h3 .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h4 .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h5 .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+.markdown-preview-plus-view[data-use-github-style] h1:hover .anchor,
+.markdown-preview-plus-view[data-use-github-style] h2:hover .anchor,
+.markdown-preview-plus-view[data-use-github-style] h3:hover .anchor,
+.markdown-preview-plus-view[data-use-github-style] h4:hover .anchor,
+.markdown-preview-plus-view[data-use-github-style] h5:hover .anchor,
+.markdown-preview-plus-view[data-use-github-style] h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  text-decoration: none;
+}
+.markdown-preview-plus-view[data-use-github-style] h1:hover .anchor .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h2:hover .anchor .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h3:hover .anchor .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h4:hover .anchor .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h5:hover .anchor .octicon-link,
+.markdown-preview-plus-view[data-use-github-style] h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+.markdown-preview-plus-view[data-use-github-style] h1 tt,
+.markdown-preview-plus-view[data-use-github-style] h2 tt,
+.markdown-preview-plus-view[data-use-github-style] h3 tt,
+.markdown-preview-plus-view[data-use-github-style] h4 tt,
+.markdown-preview-plus-view[data-use-github-style] h5 tt,
+.markdown-preview-plus-view[data-use-github-style] h6 tt,
+.markdown-preview-plus-view[data-use-github-style] h1 code,
+.markdown-preview-plus-view[data-use-github-style] h2 code,
+.markdown-preview-plus-view[data-use-github-style] h3 code,
+.markdown-preview-plus-view[data-use-github-style] h4 code,
+.markdown-preview-plus-view[data-use-github-style] h5 code,
+.markdown-preview-plus-view[data-use-github-style] h6 code {
+  font-size: inherit;
+}
+.markdown-preview-plus-view[data-use-github-style] h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+.markdown-preview-plus-view[data-use-github-style] h1 .anchor {
+  line-height: 1;
+}
+.markdown-preview-plus-view[data-use-github-style] h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+.markdown-preview-plus-view[data-use-github-style] h2 .anchor {
+  line-height: 1;
+}
+.markdown-preview-plus-view[data-use-github-style] h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+.markdown-preview-plus-view[data-use-github-style] h3 .anchor {
+  line-height: 1.2;
+}
+.markdown-preview-plus-view[data-use-github-style] h4 {
+  font-size: 1.25em;
+}
+.markdown-preview-plus-view[data-use-github-style] h4 .anchor {
+  line-height: 1.2;
+}
+.markdown-preview-plus-view[data-use-github-style] h5 {
+  font-size: 1em;
+}
+.markdown-preview-plus-view[data-use-github-style] h5 .anchor {
+  line-height: 1.1;
+}
+.markdown-preview-plus-view[data-use-github-style] h6 {
+  font-size: 1em;
+  color: #777;
+}
+.markdown-preview-plus-view[data-use-github-style] h6 .anchor {
+  line-height: 1.1;
+}
+.markdown-preview-plus-view[data-use-github-style] p,
+.markdown-preview-plus-view[data-use-github-style] blockquote,
+.markdown-preview-plus-view[data-use-github-style] ul,
+.markdown-preview-plus-view[data-use-github-style] ol,
+.markdown-preview-plus-view[data-use-github-style] dl,
+.markdown-preview-plus-view[data-use-github-style] table,
+.markdown-preview-plus-view[data-use-github-style] pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.markdown-preview-plus-view[data-use-github-style] hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+.markdown-preview-plus-view[data-use-github-style] ul,
+.markdown-preview-plus-view[data-use-github-style] ol {
+  padding-left: 2em;
+}
+.markdown-preview-plus-view[data-use-github-style] ul.no-list,
+.markdown-preview-plus-view[data-use-github-style] ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+.markdown-preview-plus-view[data-use-github-style] ul ul,
+.markdown-preview-plus-view[data-use-github-style] ul ol,
+.markdown-preview-plus-view[data-use-github-style] ol ol,
+.markdown-preview-plus-view[data-use-github-style] ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown-preview-plus-view[data-use-github-style] li > p {
+  margin-top: 16px;
+}
+.markdown-preview-plus-view[data-use-github-style] dl {
+  padding: 0;
+}
+.markdown-preview-plus-view[data-use-github-style] dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+.markdown-preview-plus-view[data-use-github-style] dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+.markdown-preview-plus-view[data-use-github-style] blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+.markdown-preview-plus-view[data-use-github-style] blockquote > :first-child {
+  margin-top: 0;
+}
+.markdown-preview-plus-view[data-use-github-style] blockquote > :last-child {
+  margin-bottom: 0;
+}
+.markdown-preview-plus-view[data-use-github-style] table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+.markdown-preview-plus-view[data-use-github-style] table th {
+  font-weight: bold;
+}
+.markdown-preview-plus-view[data-use-github-style] table th,
+.markdown-preview-plus-view[data-use-github-style] table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.markdown-preview-plus-view[data-use-github-style] table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.markdown-preview-plus-view[data-use-github-style] table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.markdown-preview-plus-view[data-use-github-style] img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.markdown-preview-plus-view[data-use-github-style] .emoji {
+  max-width: none;
+}
+.markdown-preview-plus-view[data-use-github-style] span.frame {
+  display: block;
+  overflow: hidden;
+}
+.markdown-preview-plus-view[data-use-github-style] span.frame > span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+.markdown-preview-plus-view[data-use-github-style] span.frame span img {
+  display: block;
+  float: left;
+}
+.markdown-preview-plus-view[data-use-github-style] span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #333;
+}
+.markdown-preview-plus-view[data-use-github-style] span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.markdown-preview-plus-view[data-use-github-style] span.align-center > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+.markdown-preview-plus-view[data-use-github-style] span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+.markdown-preview-plus-view[data-use-github-style] span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.markdown-preview-plus-view[data-use-github-style] span.align-right > span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+.markdown-preview-plus-view[data-use-github-style] span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+.markdown-preview-plus-view[data-use-github-style] span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+.markdown-preview-plus-view[data-use-github-style] span.float-left span {
+  margin: 13px 0 0;
+}
+.markdown-preview-plus-view[data-use-github-style] span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+.markdown-preview-plus-view[data-use-github-style] span.float-right > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+.markdown-preview-plus-view[data-use-github-style] code,
+.markdown-preview-plus-view[data-use-github-style] tt {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+.markdown-preview-plus-view[data-use-github-style] code:before,
+.markdown-preview-plus-view[data-use-github-style] tt:before,
+.markdown-preview-plus-view[data-use-github-style] code:after,
+.markdown-preview-plus-view[data-use-github-style] tt:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.markdown-preview-plus-view[data-use-github-style] code br,
+.markdown-preview-plus-view[data-use-github-style] tt br {
+  display: none;
+}
+.markdown-preview-plus-view[data-use-github-style] del code {
+  text-decoration: inherit;
+}
+.markdown-preview-plus-view[data-use-github-style] pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+.markdown-preview-plus-view[data-use-github-style] .highlight {
+  margin-bottom: 16px;
+}
+.markdown-preview-plus-view[data-use-github-style] .highlight pre,
+.markdown-preview-plus-view[data-use-github-style] pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+.markdown-preview-plus-view[data-use-github-style] .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+.markdown-preview-plus-view[data-use-github-style] pre {
+  word-wrap: normal;
+}
+.markdown-preview-plus-view[data-use-github-style] pre code,
+.markdown-preview-plus-view[data-use-github-style] pre tt {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+.markdown-preview-plus-view[data-use-github-style] pre code:before,
+.markdown-preview-plus-view[data-use-github-style] pre tt:before,
+.markdown-preview-plus-view[data-use-github-style] pre code:after,
+.markdown-preview-plus-view[data-use-github-style] pre tt:after {
+  content: normal;
+}
+.markdown-preview-plus-view[data-use-github-style] kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+.markdown-preview-plus-view[data-use-github-style] a {
+  color: #337ab7;
+}
+.markdown-preview-plus-view[data-use-github-style] pre,
+.markdown-preview-plus-view[data-use-github-style] code {
+  color: inherit;
+}
+.markdown-preview-plus-view[data-use-github-style] pre,
+.markdown-preview-plus-view[data-use-github-style] pre.editor-colors {
+  padding: 0.8em 1em;
+  margin-bottom: 1em;
+  font-size: 0.85em;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+@keyframes RotatingBackground {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+.debugger-breakpoint-icon::before,
+.debugger-shadow-breakpoint-icon::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 130%;
+  width: 130%;
+  height: 130%;
+  content: "\f052";
+}
+.debugger-breakpoint-icon,
+.debugger-breakpoint-icon-disabled,
+.debugger-breakpoint-icon-unresolved,
+.debugger-breakpoint-icon-conditional,
+.debugger-shadow-breakpoint-icon {
+  text-align: center;
+  display: block;
+  width: 0.8em;
+  cursor: pointer;
+}
+.debugger-breakpoint-icon-nonconditional {
+  color: #6494ed;
+}
+.debugger-breakpoint-icon-conditional {
+  color: #e2c08d;
+}
+.debugger-breakpoint-icon-disabled {
+  position: relative;
+  top: -4px;
+  left: 2px;
+}
+.debugger-breakpoint-icon-disabled::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 78%;
+  width: 78%;
+  height: 78%;
+  content: "\f084";
+}
+.debugger-breakpoint-icon-unresolved {
+  position: relative;
+  top: -2px;
+}
+.debugger-breakpoint-icon-unresolved::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 80%;
+  width: 80%;
+  height: 80%;
+  content: "\f0e8";
+}
+.debugger-shadow-breakpoint-icon {
+  color: rgba(100, 148, 237, 0.4);
+}
+.debugger-current-line-highlight {
+  background: linear-gradient(to bottom, rgba(15, 130, 230, 0.8) 0%, rgba(15, 130, 230, 0.8) 5%, rgba(15, 130, 230, 0.3) 5%, rgba(15, 130, 230, 0.3) 95%, rgba(15, 130, 230, 0.8) 95%, rgba(15, 130, 230, 0.8) 100%);
+}
+
+.gutter[gutter-name=diagnostics-gutter] {
+  width: 0.7em;
+}
+.diagnostics-gutter-ui-item {
+  display: flex;
+}
+.diagnostics-gutter-ui-item .icon {
+  display: flex;
+  width: 0.7em;
+  height: 0.7em;
+  font-size: 0.7em;
+  align-self: center;
+}
+.diagnostics-gutter-ui-item .icon::before {
+  width: 1em;
+  height: 1em;
+  font-size: 1em;
+  margin: 0;
+  align-self: center;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-info,
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-review {
+  color: #6494ed;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-error {
+  color: #ff6347;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-action,
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-warning {
+  color: #e2c08d;
+}
+
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher.bracket-matcher {
+  color: #F8F8F2;
+  background-color: #49483E;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282828;
+  color: #F8F8F2;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(197, 200, 198, 0.2);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(255, 255, 255, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+pre.editor-colors .gutter {
+  background-color: #303030;
+}
+pre.editor-colors .line-number.cursor-line-no-selection {
+  background-color: #49483E;
+}
+pre.editor-colors .invisible {
+  color: #F8F8F2;
+}
+pre.editor-colors .cursor {
+  border-color: #F8F8F0;
+}
+pre.editor-colors .selection .region {
+  background-color: #49483E;
+}
+pre.editor-colors .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: 1px solid #888;
+}
+pre.editor-colors .search-results .syntax--marker.current-result .region {
+  border: 1px solid white;
+}
+pre.editor-colors .syntax--gfm .syntax--markup.syntax--heading {
+  color: #A6E22E;
+  font-weight: bold;
+}
+pre.editor-colors .syntax--gfm .syntax--markup.syntax--underline {
+  color: #E6DB74;
+  text-decoration: underline;
+}
+pre.editor-colors .syntax--gfm .syntax--bold {
+  font-weight: bold;
+}
+pre.editor-colors .syntax--gfm .syntax--italic {
+  font-style: italic;
+}
+pre.editor-colors .syntax--gfm .syntax--raw {
+  color: #66D9EF;
+}
+pre.editor-colors .syntax--gfm .syntax--variable.syntax--list {
+  color: #F92672;
+  font-weight: bold;
+}
+pre.editor-colors .syntax--gfm .syntax--link {
+  color: #CCC;
+}
+pre.editor-colors .syntax--gfm .syntax--link .syntax--entity {
+  color: #AE81FF;
+}
+.syntax--comment {
+  color: #75715E;
+}
+.syntax--constant.syntax--character,
+.syntax--constant.syntax--language,
+.syntax--constant.syntax--numeric,
+.syntax--constant.syntax--other {
+  color: #AE81FF;
+}
+.syntax--entity.syntax--name.syntax--class {
+  text-decoration: none;
+  color: #A6E22E;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #A6E22E;
+}
+.syntax--entity.syntax--name.syntax--instance {
+  color: #66D9EF;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #F92672;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #A6E22E;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  font-style: italic;
+  text-decoration: none;
+  color: #A6E22E;
+}
+.syntax--invalid {
+  color: #F8F8F0;
+  background-color: #F92672;
+}
+.syntax--invalid.syntax--deprecated {
+  background-color: #AE81FF;
+}
+.syntax--keyword {
+  color: #F92672 !important;
+}
+.syntax--meta.syntax--tag {
+  color: #F8F8F2;
+}
+.syntax--storage {
+  color: #F92672;
+}
+.syntax--storage.syntax--type {
+  font-style: italic;
+  color: #66D9EF;
+}
+.syntax--string {
+  color: #E6DB74;
+}
+.syntax--support.syntax--constant,
+.syntax--support.syntax--function {
+  color: #66D9EF;
+}
+.syntax--support.syntax--class,
+.syntax--support.syntax--type {
+  font-style: italic;
+  color: #66D9EF;
+}
+.syntax--variable.syntax--parameter {
+  font-style: italic;
+  color: #FD971F;
+}
+.syntax--variable.syntax--language.syntax--python,
+.syntax--variable.syntax--language.syntax--js {
+  color: #F92672;
+}
+.syntax--class.syntax--jade {
+  color: #AE81FF;
+}
+.leading-whitespace,
+.trailing-whitespace {
+  display: inline-block;
+}
+.syntax--js .syntax--template .syntax--element .syntax--quasi.syntax--begin,
+.syntax--js .syntax--template .syntax--element .syntax--quasi.syntax--end,
+.syntax--js .syntax--template .syntax--element .syntax--language {
+  color: #F92672;
+}
+.syntax--js .syntax--template .syntax--element .syntax--variable,
+.syntax--js .syntax--template .syntax--element .syntax--brace,
+.syntax--js .syntax--template .syntax--element .syntax--comma {
+  color: #F8F8F2;
+}
+.syntax--js .syntax--template .syntax--element .syntax--constant {
+  color: #AE81FF;
+}
+.syntax--json .syntax--key .syntax--string {
+  color: #a6e22e;
+}
+</style>
+
+  </head>
+  <body class="markdown-preview-plus-view">
+    <h1>Data Types:</h1>
+<p>These are all of the basic types of data you will deal with in Python.</p>
+<h2>Integers</h2>
+<blockquote>
+<p>A whole number; a number that is not a fraction.</p>
+</blockquote>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>           </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 2</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>8</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>-</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>           </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 7</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>10</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>*</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>2</span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 20</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>35</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>/</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>5</span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 7.0</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>10</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>/</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 3.33333</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>5</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>/</span><span>/</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 1</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>7</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>%</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span><span>           </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 1</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>2</span></span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>*</span><span>*</span></span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span><span>            </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 8</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>5</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>5</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span><span>         </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> TypeError</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>str</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>5</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>5</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span><span>    </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> '55'</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>type</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>         </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> &lt;class 'int'&gt;</span></span></span>
+</pre>
+<h2>Floats (decimals)</h2>
+<p>Any decimal number.</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span class="syntax--constant syntax--numeric syntax--float syntax--python"><span>5.4</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span><span>         </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>  8.3</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>type</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--float syntax--python"><span>.1</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>        </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>  &lt;class 'float'&gt;</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>x </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--float syntax--python"><span>0.5</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--float syntax--python"><span>0.5</span></span><span>   </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>x               </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>  1.0</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>type</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span>x</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>         </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>  &lt;class 'float'&gt;</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>x </span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>==</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>  True</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>x </span><span class="syntax--keyword syntax--operator syntax--logical syntax--python"><span>is</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>  False</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>int</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span>x</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span> </span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>==</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>     </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span>  True</span></span></span>
+</pre>
+<h2>Lists</h2>
+<p>An indexed collection of items.</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span>a </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> </span><span class="syntax--meta syntax--structure syntax--list syntax--python"><span class="syntax--punctuation syntax--definition syntax--list syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span></span><span class="syntax--punctuation syntax--separator syntax--list syntax--python"><span>,</span></span><span> </span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>2</span></span></span><span class="syntax--punctuation syntax--separator syntax--list syntax--python"><span>,</span></span><span> </span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span></span><span class="syntax--punctuation syntax--definition syntax--list syntax--end syntax--python"><span>]</span></span></span><span>   </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>b </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> </span><span class="syntax--meta syntax--structure syntax--list syntax--python"><span class="syntax--punctuation syntax--definition syntax--list syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>4</span></span></span><span class="syntax--punctuation syntax--definition syntax--list syntax--end syntax--python"><span>]</span></span></span><span>         </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--variable syntax--other syntax--object syntax--python"><span>b</span></span><span class="syntax--meta syntax--method-call syntax--python"><span class="syntax--punctuation syntax--separator syntax--method syntax--period syntax--python"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--python"><span>append</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--method-call syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>5</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>     </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>b               </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [4, 5]</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>c </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> b </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>6</span></span><span>       </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> TypeError</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>c </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> b </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--meta syntax--structure syntax--list syntax--python"><span class="syntax--punctuation syntax--definition syntax--list syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>6</span></span></span><span class="syntax--punctuation syntax--definition syntax--list syntax--end syntax--python"><span>]</span></span></span><span>     </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>b               </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [4, 5]</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>c               </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [4, 5, 6]</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>a </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> c           </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [1, 2, 3, 4, 5, 6]</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--variable syntax--other syntax--object syntax--python"><span>a</span></span><span class="syntax--meta syntax--method-call syntax--python"><span class="syntax--punctuation syntax--separator syntax--method syntax--period syntax--python"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--python"><span>extend</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--method-call syntax--arguments syntax--python"><span>c</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>     </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>a               </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [1, 2, 3, 4, 5, 6]</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>c               </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [4, 5, 6]</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>len</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span>a</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 6</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--variable syntax--other syntax--object syntax--python"><span>a</span></span><span class="syntax--meta syntax--method-call syntax--python"><span class="syntax--punctuation syntax--separator syntax--method syntax--period syntax--python"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--python"><span>pop</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>         </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 6</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--variable syntax--other syntax--object syntax--python"><span>a</span></span><span class="syntax--meta syntax--method-call syntax--python"><span class="syntax--punctuation syntax--separator syntax--method syntax--period syntax--python"><span>.</span></span><span class="syntax--entity syntax--name syntax--function syntax--python"><span>pop</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--method-call syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>        </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 1</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>a               </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [2, 3, 4, 5]</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--item-access syntax--python"><span>a</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>            </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 2</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--item-access syntax--python"><span>a</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>-</span></span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>           </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 5</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--item-access syntax--python"><span>a</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>:</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>           </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [3, 4, 5]</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--item-access syntax--python"><span>a</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span>:</span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [3, 4]</span></span></span>
+</pre>
+<h2>Strings</h2>
+<p>Basically a list of charters with a few extra methods.</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>Hello World!</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span><span>                </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 'Hello World!'</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>s</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>*</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>20</span></span><span> </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>+</span></span><span> </span><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>!</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span><span>          </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 'shhhhhhhhhhhhhhhhhhhh!'</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span>s </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> </span><span class="syntax--string syntax--quoted syntax--double syntax--block syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>"""</span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--string syntax--quoted syntax--double syntax--block syntax--python"><span>This</span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--string syntax--quoted syntax--double syntax--block syntax--python"><span>is</span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--string syntax--quoted syntax--double syntax--block syntax--python"><span>a</span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--string syntax--quoted syntax--double syntax--block syntax--python"><span>multiline</span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--string syntax--quoted syntax--double syntax--block syntax--python"><span>String!</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>"""</span></span></span><span>                    </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 'This\nis\na\nmultiline\nstring!\n'</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--keyword syntax--other syntax--python"><span>print</span></span><span>(</span><span>s</span><span>)</span><span>                      </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>type</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span>s</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>                       </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> &lt;type 'str'&gt;</span></span></span>
+</pre>
+<h2>Dictionaries</h2>
+<p>A collection of key, value pairs.</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span>person </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> </span><span class="syntax--meta syntax--structure syntax--dictionary syntax--python"><span class="syntax--punctuation syntax--definition syntax--dictionary syntax--begin syntax--python"><span>{</span></span><span class="syntax--meta syntax--structure syntax--dictionary syntax--key syntax--python"><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>name</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span></span><span class="syntax--punctuation syntax--separator syntax--valuepair syntax--dictionary syntax--python"><span>:</span></span><span> </span><span class="syntax--meta syntax--structure syntax--dictionary syntax--value syntax--python"><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>Noah</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span></span><span class="syntax--punctuation syntax--separator syntax--dictionary syntax--python"><span>,</span></span><span> </span><span class="syntax--meta syntax--structure syntax--dictionary syntax--key syntax--python"><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>age</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span></span><span class="syntax--punctuation syntax--separator syntax--valuepair syntax--dictionary syntax--python"><span>:</span></span><span> </span><span class="syntax--meta syntax--structure syntax--dictionary syntax--value syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>17</span></span></span><span class="syntax--punctuation syntax--definition syntax--dictionary syntax--end syntax--python"><span>}</span></span></span><span>  </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--item-access syntax--python"><span>person</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>name</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>                        </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 'Noah'</span><span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--meta syntax--item-access syntax--python"><span>person</span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--item-access syntax--arguments syntax--python"><span class="syntax--string syntax--quoted syntax--single syntax--single-line syntax--python"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--python"><span>'</span></span><span>age</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--python"><span>'</span></span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--python"><span>]</span></span></span><span>                         </span><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 17</span></span></span>
+</pre>
+<h1>Loops:</h1>
+<p>Loops are one of your most powerful tools. Much of programming is based on loops, doing repetitive tasks one after the other.</p>
+<h2>While</h2>
+<p>The most basic loop.</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span class="syntax--keyword syntax--control syntax--repeat syntax--python"><span>while</span></span><span> condition:</span></span>
+<span class="syntax--source syntax--python"><span>  </span><span class="syntax--keyword syntax--control syntax--statement syntax--python"><span>pass</span></span></span>
+</pre>
+<p>Example:</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span>x </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>10</span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--keyword syntax--control syntax--repeat syntax--python"><span>while</span></span><span> x </span><span class="syntax--keyword syntax--operator syntax--comparison syntax--python"><span>&gt;</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>0</span></span><span>:</span></span>
+<span class="syntax--source syntax--python"><span>  </span><span class="syntax--keyword syntax--other syntax--python"><span>print</span></span><span>(</span><span>x</span><span>)</span></span>
+<span class="syntax--source syntax--python"><span>  x </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--augmented syntax--python"><span>-=</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 10, 9, 8, 7, 6, 5, 4, 3, 2, 1</span></span></span>
+</pre>
+<h3>For</h3>
+<p>A special type of loop that passes each item of an iteranble to the block of code defined with in it.</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span class="syntax--keyword syntax--control syntax--repeat syntax--python"><span>for</span></span><span> value </span><span class="syntax--keyword syntax--operator syntax--logical syntax--python"><span>in</span></span><span> iterable:</span></span>
+<span class="syntax--source syntax--python"><span>  </span><span class="syntax--keyword syntax--control syntax--statement syntax--python"><span>pass</span></span></span>
+</pre>
+<p>Examples:</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span>x </span><span class="syntax--keyword syntax--operator syntax--assignment syntax--python"><span>=</span></span><span> </span><span class="syntax--meta syntax--structure syntax--list syntax--python"><span class="syntax--punctuation syntax--definition syntax--list syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span></span><span class="syntax--punctuation syntax--separator syntax--list syntax--python"><span>,</span></span><span> </span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>4</span></span></span><span class="syntax--punctuation syntax--separator syntax--list syntax--python"><span>,</span></span><span> </span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>5</span></span></span><span class="syntax--punctuation syntax--definition syntax--list syntax--end syntax--python"><span>]</span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--keyword syntax--control syntax--repeat syntax--python"><span>for</span></span><span> i </span><span class="syntax--keyword syntax--operator syntax--logical syntax--python"><span>in</span></span><span> x:</span></span>
+<span class="syntax--source syntax--python"><span>  </span><span class="syntax--keyword syntax--other syntax--python"><span>print</span></span><span>(</span><span>i</span><span>)</span></span>
+<span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 3, 4, 5</span></span></span>
+</pre>
+<p>Using <code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">range()</code></p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span class="syntax--keyword syntax--control syntax--repeat syntax--python"><span>for</span></span><span> i </span><span class="syntax--keyword syntax--operator syntax--logical syntax--python"><span>in</span></span><span> </span><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>range</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>3</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span><span>:</span></span>
+<span class="syntax--source syntax--python"><span>  </span><span class="syntax--keyword syntax--other syntax--python"><span>print</span></span><span>(</span><span>i</span><span>)</span></span>
+<span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> 0, 1, 2</span></span></span>
+</pre>
+<p>Inline For Loop:</p>
+<pre class="editor-colors lang-py"><span class="syntax--source syntax--python"><span class="syntax--meta syntax--structure syntax--list syntax--python"><span class="syntax--punctuation syntax--definition syntax--list syntax--begin syntax--python"><span>[</span></span><span class="syntax--meta syntax--structure syntax--list syntax--item syntax--python"><span>(</span><span>x, x </span><span class="syntax--keyword syntax--operator syntax--arithmetic syntax--python"><span>*</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>2</span></span><span>)</span><span> </span><span class="syntax--keyword syntax--control syntax--repeat syntax--python"><span>for</span></span><span> x </span><span class="syntax--keyword syntax--operator syntax--logical syntax--python"><span>in</span></span><span> </span><span class="syntax--meta syntax--function-call syntax--python"><span class="syntax--support syntax--function syntax--builtin syntax--python"><span>range</span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--begin syntax--bracket syntax--round syntax--python"><span>(</span></span><span class="syntax--meta syntax--function-call syntax--arguments syntax--python"><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>1</span></span><span class="syntax--punctuation syntax--separator syntax--arguments syntax--python"><span>,</span></span><span> </span><span class="syntax--constant syntax--numeric syntax--integer syntax--decimal syntax--python"><span>11</span></span></span><span class="syntax--punctuation syntax--definition syntax--arguments syntax--end syntax--bracket syntax--round syntax--python"><span>)</span></span></span></span><span class="syntax--punctuation syntax--definition syntax--list syntax--end syntax--python"><span>]</span></span></span></span>
+<span class="syntax--source syntax--python"><span class="syntax--comment syntax--line syntax--number-sign syntax--python"><span class="syntax--punctuation syntax--definition syntax--comment syntax--python"><span>#</span></span><span> [(1, 2), (2, 4), (3, 6), (4, 8), (5, 10), (6, 12), (7, 14), (8, 16), (9, 18), (10, 20)]</span></span></span>
+</pre>
+
+  </body>
+</html>
