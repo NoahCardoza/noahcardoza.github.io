@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Welcome from './views/Welcome.vue'
-import WelcomeIndex from './components/Welcome/Welcome.vue'
 
 Vue.use(Router)
 // classes
@@ -14,29 +12,20 @@ export default new Router({
     },
     {
       path: '/welcome',
-      component: Welcome,
+      component: () => import(/* webpackChunkName: "welcome" */ './views/Welcome.vue'),
       children: [
         {
           path: '',
           name: 'welcome',
-          component: WelcomeIndex
-          // {
-          //   render: h => h('div', {}, 'Welcome')
-          // }
+          component:() => import(/* webpackChunkName: "welcome-index" */ './components/Welcome/Welcome.vue')
         },
         {
           path: 'about',
           component: () => import(/* webpackChunkName: "welcome-about" */ './components/Welcome/About.vue')
-          // {
-          //   render: h => h('div', {}, 'About')
-          // }
         },
         {
           path: 'classes/:classId?',
           component: () => import(/* webpackChunkName: "welcome-classes" */ './components/Welcome/Classes.vue')
-          // {
-          //   render: h => h('div', {}, 'Coming sooner!')
-          // }
         },
         {
           path: 'projects',

@@ -1,13 +1,15 @@
 <template lang="html">
-    <vue-markdown v-if="fetchMarkdown.resolvedWithSomething" :source="fetchMarkdown.resolvedWith"
+  <div class="markdown-render">
+    <vue-markdown v-if="fetchMarkdown.resolvedWithSomething" :source="markdown"
     :anchorAttributes="{
       target: '_blank',
       onclick:  `handleMarkdownLinks(this, '${cls.git}wk${paddWeek(cls.week)}/')`
     }"></vue-markdown>
+  </div>
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown'
+// import VueMarkdown from 'vue-markdown'
 
 const paddWeek = wk => (wk + '').padStart(2, '0')
 
@@ -45,16 +47,18 @@ export default {
     cls: Object
   },
   components: {
-    VueMarkdown
-  },
-  data(){
-    return {
-      markdown: null
-    }
+    VueMarkdown: () => import(/* webpackChunkName: "vue-markdown" */ 'vue-markdown')
   },
   created(){
     window.v = this
     this.fetchMarkdown()
+  },
+  computed:{
+    markdown(){
+      return this.fetchMarkdown.isPending
+        ? 'Loading...'
+          : this.fetchMarkdown.resolvedWith
+    }
   },
   asyncMethods: {
      fetchMarkdown(){
@@ -66,7 +70,6 @@ export default {
         })
         return md
       })
-      // return 'Loading...'
     }
   },
   methods: {
@@ -74,6 +77,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css">
-</style>

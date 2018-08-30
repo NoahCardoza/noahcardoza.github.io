@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <section id="main">
-      <el-row align="center" justify="center">
-        <el-col :span="4">
+      <el-row type="flex" align="middle" justify="space-between" class="align-content: center;">
+        <el-col style="flex: 0 0 8rem;">
           <span style="font-size: 2rem;">
             <b>Noah</b>
             <br>
             <i>Cardoza</i>
           </span>
-          <!-- <h1 style="margin:0;">Noah Cardoza</h1> -->
         </el-col>
-        <el-col :span="20">
+        <el-col align="right">
           <portal-target name="portal-header"></portal-target>
+          <!-- <el-button icon="el-icon-more" circle></el-button> -->
         </el-col>
       </el-row>
       <el-row>
@@ -32,12 +32,33 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+
+//
+// (function() {
+//     var throttle = function(type, name, obj) {
+//         obj = obj || window;
+//         var running = false;
+//         var func = function() {
+//             if (running) { return; }
+//             running = true;
+//              requestAnimationFrame(function() {
+//                 obj.dispatchEvent(new CustomEvent(name));
+//                 running = false;
+//             });
+//         };
+//         obj.addEventListener(type, func);
+//     };
+//
+//     /* init - you can init any event */
+//     throttle("resize", "optimizedResize");
+// })();
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    // HelloWorld
   }
 }
 </script>
