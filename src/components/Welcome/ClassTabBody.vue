@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="markdown-render">
-    <vue-markdown v-if="fetchMarkdown.resolvedWithSomething" :source="markdown"
+    <span v-if="!fetchMarkdown.resolvedWithSomething">Loading...</span>
+    <vue-markdown v-else v-if="" :source="fetchMarkdown.resolvedWith"
     :anchorAttributes="{
       target: '_blank',
       onclick:  `handleMarkdownLinks(this, '${cls.git}wk${paddWeek(cls.week)}/')`
@@ -9,7 +10,7 @@
 </template>
 
 <script>
-// import VueMarkdown from 'vue-markdown'
+import VueMarkdown from 'vue-markdown'
 
 const paddWeek = wk => (wk + '').padStart(2, '0')
 
@@ -47,18 +48,19 @@ export default {
     cls: Object
   },
   components: {
-    VueMarkdown: () => import(/* webpackChunkName: "vue-markdown" */ 'vue-markdown')
+    VueMarkdown
+  },
+  data(){
+    return {
+      markdown: null
+    }
   },
   created(){
-    window.v = this
-    this.fetchMarkdown()
-  },
-  computed:{
-    markdown(){
-      return this.fetchMarkdown.isPending
-        ? 'Loading...'
-          : this.fetchMarkdown.resolvedWith
+    if (process.env.NODE_ENV == "development") {
+      window.v = this
     }
+
+    this.fetchMarkdown()
   },
   asyncMethods: {
      fetchMarkdown(){
@@ -66,7 +68,7 @@ export default {
       return fetchWithCache(cls.raw_git + 'wk' + paddWeek(cls.week) + '/README.md')
       .then(md => {
         this.$nextTick(() => {
-          Prism.highlightAllUnder(this.$el)
+          window.Prism.highlightAllUnder(this.$el)
         })
         return md
       })
@@ -77,3 +79,6 @@ export default {
   }
 }
 </script>
+
+<style lang="css">
+</style>

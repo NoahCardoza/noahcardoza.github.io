@@ -11,7 +11,6 @@ Vue.config.productionTip = false
 Vue.use(PortalVue)
 Vue.use(AsyncMethods)
 
-
 new Vue({
   router,
   render: h => h(App)

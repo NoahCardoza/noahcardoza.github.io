@@ -23,25 +23,6 @@
   </div>
 </template>
 
-<!-- <template lang="html">
-  <div>
-    <el-card class="box-card">
-      <div slot="header" class="clearfix">
-        <h1>Classes - ATeam: Assignments</h1>
-      </div>
-      <el-tabs :value="defaultTab" @tab-click="handleTabClick">
-        <el-tab-pane v-for="cls in classes" :label="cls.title" :name="cls.id">
-          <vue-markdown :source="cls.markdown || markdownFromClass(cls)"
-          :anchorAttributes="{
-            target: '_blank',
-            onclick:  `handleMarkdownLinks(this, '${cls.git}wk${paddWeek(cls.week)}/')`
-          }"></vue-markdown>
-        </el-tab-pane>
-      </el-tabs>
-    </el-card>
-  </div>
-</template> -->
-
 <script>
 import ClassTabBody from './ClassTabBody.vue'
 
@@ -59,13 +40,14 @@ export default {
           id: 'python3',
           title: 'Introduction to Python',
           git: 'https://github.com/NoahCardoza/teaching-curriculum/blob/master/python3/',
+          // TODO: Derive `raw_git` from `git`
           raw_git: 'https://raw.githubusercontent.com/NoahCardoza/teaching-curriculum/master/python3/',
+          // TODO: Actually so something with these files...
           files: [
             'README.md'
           ],
           startdate: new Date("Tue Aug 28 2018"),
           week: calculateWeeksBetween(new Date("Tue Aug 28 2018"), new Date()),
-          markdown: null
         },
         {
           id: 'scratch',
@@ -77,13 +59,14 @@ export default {
           ],
           startdate: new Date("Tue Aug 28 2018"),
           week: calculateWeeksBetween(new Date("Tue Aug 28 2018"), new Date()),
-          markdown: null
         }
       ]
     }
   },
   mounted(){
-    window.vc = this
+    if (process.env.NODE_ENV == "development") {
+      window.vc = this
+    }
   },
   computed: {
     defaultTab(){

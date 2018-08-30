@@ -8,7 +8,7 @@
           </el-checkbox-button>
         </div>
         <el-menu :class="{'mobile-view': elMenuModeIsMobile, 'hide-mobile-view': !elMenuShouldShow}" :mode="elMenuMode" :router="true" :default-active="$route.path">
-          <el-menu-item v-for="item in navbarItems" :index="item.route">{{item.name}}</el-menu-item>
+          <el-menu-item v-for="item in elMenuItemsByMode" :key="item.route" :index="item.route">{{item.name}}</el-menu-item>
         </el-menu>
       </div>
     </portal>
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+
+const MOBILE_BREAKPOINT = 555;
 
 (function() {
     var throttle = function(type, name, obj) {
@@ -38,35 +40,45 @@
     throttle("resize", "optimizedResize");
 })();
 
+let lastElMenuItemsByMode = null
+
 export default {
   data(){
+    const navbarItems = [
+      {
+        name: 'Welcome',
+        route: '/welcome'
+      },
+      {
+        name: 'About',
+        route: '/welcome/about'
+      },
+      {
+        name: 'Classes',
+        route: '/welcome/classes'
+      },
+      {
+        name: 'Projects',
+        route: '/welcome/projects'
+      }
+    ]
+
     return {
-      navbarItems: [
-        {
-          name: 'Welcome',
-          route: '/welcome'
-        },
-        {
-          name: 'About',
-          route: '/welcome/about'
-        },
-        {
-          name: 'Classes',
-          route: '/welcome/classes'
-        },
-        {
-          name: 'Projects',
-          route: '/welcome/projects'
-        }
-      ],
+      navbarItems,
+      navbarItemsReversed: navbarItems.slice().reverse(),
       screenWidth: window.innerWidth,
       elMenuShowDropdown: false
     }
   },
   mounted(){
-    window.vm = this
+    if (process.env.NODE_ENV == "development") {
+      window.vm = this
+    }
     window.addEventListener("optimizedResize", () => {
-      this.screenWidth = window.innerWidth
+      if ((this.screenWidth < MOBILE_BREAKPOINT && window.innerWidth > MOBILE_BREAKPOINT) || (this.screenWidth > MOBILE_BREAKPOINT && window.innerWidth < MOBILE_BREAKPOINT)) {
+        // console.log('Setting {screenWidth}');
+        this.screenWidth = window.innerWidth
+      }
     });
   },
   computed: {
@@ -77,7 +89,7 @@ export default {
       return this.elMenuModeIsMobile ? 'vertical' : 'horizontal'
     },
     elMenuModeIsMobile(){
-      return this.screenWidth < 555
+      return this.screenWidth < MOBILE_BREAKPOINT
     },
     currentRouteName(){
       return this.navbarItems.map(i => ({
@@ -88,6 +100,10 @@ export default {
         ? next
           : bestMatch
       , null).name
+    },
+    elMenuItemsByMode(){
+      // console.log('eval (elMenuItemsByMode)', this.elMenuModeIsMobile);
+      return this.elMenuModeIsMobile ? this.navbarItems : this.navbarItemsReversed
     }
   },
   watch: {
@@ -142,15 +158,21 @@ export default {
       display: none;
     }
 
-  #app .el-menu--horizontal {
-    text-align: right;
+  #app ul.el-menu--horizontal {
+    /* text-align: right; */
+    /*  */
+    /* -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); */
   }
 
-  #app .el-menu--horizontal li {
-    display: inline-block;
+  #app ul.el-menu--horizontal li {
+    /* display: inline-block; */
     float: right;
+    /*  */
+    /* -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg); */
   }
-  /* display: inline-block; text-align: center; */
-  /* nav{} */
-/* nav li{display: inline-block; text-align: center;} */
+
 </style>

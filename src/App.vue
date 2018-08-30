@@ -11,12 +11,11 @@
         </el-col>
         <el-col align="right">
           <portal-target name="portal-header"></portal-target>
-          <!-- <el-button icon="el-icon-more" circle></el-button> -->
         </el-col>
       </el-row>
       <el-row>
-        <el-col :gutter="20">
-          <router-view></router-view>
+        <el-col>
+          <router-view style="margin: auto; max-width: 1200px;"></router-view>
         </el-col>
       </el-row>
     </section>
@@ -32,34 +31,8 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
-//
-// (function() {
-//     var throttle = function(type, name, obj) {
-//         obj = obj || window;
-//         var running = false;
-//         var func = function() {
-//             if (running) { return; }
-//             running = true;
-//              requestAnimationFrame(function() {
-//                 obj.dispatchEvent(new CustomEvent(name));
-//                 running = false;
-//             });
-//         };
-//         obj.addEventListener(type, func);
-//     };
-//
-//     /* init - you can init any event */
-//     throttle("resize", "optimizedResize");
-// })();
-
-
 export default {
   name: 'app',
-  components: {
-    // HelloWorld
-  }
 }
 </script>
 
@@ -68,17 +41,14 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  /*  */
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 
 section#main {
   flex: 1 0 auto;
-  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
   padding: 20px;
 }
 
@@ -86,7 +56,7 @@ section#main {
 footer {
   text-align: center;
   flex-shrink: 0;
-  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
   padding: 20px;
 }
+
 </style>
